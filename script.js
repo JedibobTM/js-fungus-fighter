@@ -3,32 +3,88 @@
 // Example:
 let characterAP = 100
 let fungusHP = 100;
-let attack = [
-    {
-        name: "arcaneScepter",
-        apCost: 12,
-        hpDmg: 14
-    },
-    {
-        name: "entangle",
-        apCost: 9,
-        hpDmg: 23
-    },
-    {
-        name: "dragonBlade",
-        apCost: 38,
-        hpDmg: 47
-    },
-    {
-        name: "starFire",
-        apCost: 33,
-        hpDmg: 25
-    }
-];
 
-function attackAbility(event, ability){
-    console.log("IS THIS WORKING?");
+function arcaneScepter(event, apCost, hpDamage) {
+    if (characterAP < apCost) {
+        console.log('not enough ap');
+    } else {
+        characterAP -= apCost;
+        fungusHP -= hpDamage;
+        if (fungusHP == 0) {
+            console.log('YOU WIN');
+        }
+    }
+    console.log("AP Left:", characterAP, "HP Left:", fungusHP);
+    document.getElementsByClassName("ap-text")[0].innerHTML = `${characterAP} AP`;
+    document.getElementsByClassName("hp-text")[0].innerHTML = `${fungusHP} HP`;
+    
+    if (fungusHP < 0) {
+        fungusHP = 0;
+    }
+    
 }
+
+function entangle(event, apCost, hpDamage) {
+    if (characterAP < apCost) {
+        console.log('not enough ap');
+    } else {
+        characterAP -= apCost;
+        fungusHP -= hpDamage;
+        if (fungusHP == 0) {
+            console.log('YOU WIN');
+        }
+    }
+    console.log("AP Left:", characterAP, "HP Left:", fungusHP);
+    document.getElementsByClassName("ap-text")[0].innerHTML = `${characterAP} AP`;
+    document.getElementsByClassName("hp-text")[0].innerHTML = `${fungusHP} HP`;
+   
+    if (fungusHP < 0) {
+        fungusHP = 0;
+    }
+    
+}
+
+function dragonBlade(event, apCost, hpDamage) {
+    
+    if (characterAP < apCost) {
+        console.log('not enough ap');
+    } else {
+        characterAP -= apCost;
+        fungusHP -= hpDamage;
+        if (fungusHP == 0) {
+            console.log('YOU WIN');
+        }
+    }
+    console.log("AP Left:", characterAP, "HP Left:", fungusHP);
+    document.getElementsByClassName("ap-text")[0].innerHTML = `${characterAP} AP`;
+    document.getElementsByClassName("hp-text")[0].innerHTML = `${fungusHP} HP`;
+  
+    if (fungusHP < 0) {
+        fungusHP = 0;
+    }
+    
+}
+
+function starFire(event, apCost, hpDamage) {
+    if (characterAP < apCost) {
+        console.log('not enough ap');
+    } else {
+        characterAP -= apCost;
+        fungusHP -= hpDamage;
+        if (fungusHP == 0) {
+            console.log('YOU WIN');
+        }
+    }
+    console.log("AP Left:", characterAP, "HP Left:", fungusHP);
+    document.getElementsByClassName("ap-text")[0].innerHTML = `${characterAP} AP`;
+    document.getElementsByClassName("hp-text")[0].innerHTML = `${fungusHP} HP`;
+   
+    if (fungusHP < 0) {
+        fungusHP = 0;
+    }
+    
+}
+
 
 function onReady() {
     console.log("Ready to go!")
